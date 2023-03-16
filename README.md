@@ -1,2 +1,3 @@
 # casaPorTemporada
-Aplicativo para Anunciar sua Casa de Temporada, usando conhecimentos de Android Studio com Java e Firebase
+Este é um repositório que contém o código-fonte de um aplicativo Android para anunciar casas de temporada, desenvolvido utilizando o Android Studio com Java e Firebase. O objetivo do aplicativo é permitir que usuários cadastrem suas casas de temporada e as divulguem para potenciais interessados, facilitando o processo de aluguel.
+O aplicativo conta com diversas funcionalidades, incluindo autenticação de usuários por meio do Firebase, armazenamento de informações dos imóveis em um banco de dados em tempo real do Firebase, e exibição de fotos e detalhes das casas para os usuários interessados. O aplicativo também apresenta uma interface de usuário intuitiva e agradável, com um design moderno e responsivo
