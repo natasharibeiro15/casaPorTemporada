@@ -13,10 +13,10 @@
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
                 android:padding="16dp"
                 android:src="@drawable/ic_voltar"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -33,7 +34,6 @@
                 app:layout_constraintHorizontal_bias="0.044"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/app_name"
                 app:layout_constraintVertical_bias="0.0" />
 
             <LinearLayout
@@ -48,38 +48,44 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.425">
+                app:layout_constraintVertical_bias="0.605">
 
                 <EditText
+                    android:id="@+id/edit_emailL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="18dp"
                     android:background="@drawable/bg_edit"
                     android:hint="E-mail"
-                    android:textColorHint="@color/black"
                     android:inputType="textEmailAddress"
                     android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="24sp" />
 
                 <EditText
+                    android:id="@+id/edit_senhaL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="18dp"
                     android:background="@drawable/bg_edit"
                     android:gravity="center_vertical"
                     android:hint="Senha"
-                    android:textColorHint="@color/black"
                     android:inputType="textPassword"
                     android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEntrar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="18dp"
                     android:background="@drawable/bg_btn"
+                    android:onClick="validaDados"
                     android:text="Entrar"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -112,7 +118,17 @@
                         android:textSize="18sp" />
 
                 </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBarL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:indeterminateTint="@color/azul_padrao"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
