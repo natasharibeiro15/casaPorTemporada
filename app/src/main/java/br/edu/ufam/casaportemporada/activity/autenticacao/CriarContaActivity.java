@@ -12,34 +12,35 @@ import android.widget.Toast;
 
 import br.edu.ufam.casaportemporada.R;
 import br.edu.ufam.casaportemporada.activity.MainActivity;
+import br.edu.ufam.casaportemporada.databinding.ActivityCriarContaBinding;
 import br.edu.ufam.casaportemporada.helper.FirebaseHelper;
 import br.edu.ufam.casaportemporada.model.Usuario;
 
     public class CriarContaActivity extends AppCompatActivity {
-        private EditText edit_nome, edit_email, edit_senha, edit_telefone;
-        private ProgressBar progressBar;
+
+        private ActivityCriarContaBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criar_conta);
+        binding = ActivityCriarContaBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         configCliques();
-        iniciaComponentes();
     }
 
 
     public void validaDados(){
-        String nome = edit_nome.getText().toString();
-        String email = edit_email.getText().toString();
-        String telefone = edit_telefone.getText().toString();
-        String senha = edit_senha.getText().toString();
+        String nome = binding.editNomeC.getText().toString();
+        String email = binding.editEmailC.getText().toString();
+        String telefone = binding.editTelefoneC.getText().toString();
+        String senha = binding.editSenhaC.getText().toString();
 
         if(!nome.isEmpty()){
             if(!email.isEmpty()){
                 if(!telefone.isEmpty()){
                     if (!senha.isEmpty()){
 
-                        progressBar.setVisibility(View.VISIBLE);
+                        binding.progressBarC.setVisibility(View.VISIBLE);
 
                         Usuario usuario = new Usuario();
                         usuario.setNome(nome);
@@ -51,20 +52,20 @@ import br.edu.ufam.casaportemporada.model.Usuario;
 
 
                     }else{
-                        edit_senha.requestFocus();
-                        edit_senha.setError("Informe uma senha");
+                        binding.editSenhaC.requestFocus();
+                        binding.editSenhaC.setError("Informe uma senha");
                     }
                 }else{
-                    edit_telefone.requestFocus();
-                    edit_telefone.setError("Informe seu telefone");
+                    binding.editTelefoneC.requestFocus();
+                    binding.editTelefoneC.setError("Informe seu telefone");
                 }
             }else{
-                edit_email.requestFocus();
-                edit_email.setError("Informe seu e-mail");
+                binding.editEmailC.requestFocus();
+                binding.editEmailC.setError("Informe seu e-mail");
             }
         }else{
-            edit_nome.requestFocus();
-            edit_nome.setError("Informe seu nome");
+            binding.editNomeC.requestFocus();
+            binding.editNomeC.setError("Informe seu nome");
         }
     }
 
@@ -88,18 +89,8 @@ import br.edu.ufam.casaportemporada.model.Usuario;
     }
     private void configCliques(){
         findViewById(R.id.ib_voltar).setOnClickListener(view -> finish());
-        findViewById(R.id.btn_cadastro).setOnClickListener(view -> validaDados());
+        binding.btnCadastro.setOnClickListener(view -> validaDados());
     }
 
 
-    private void iniciaComponentes(){
-        TextView text_titulo = findViewById(R.id.text_titulo);
-        text_titulo.setText("Crie sua conta");
-
-        edit_nome = findViewById(R.id.edit_nome);
-        edit_email = findViewById(R.id.edit_email);
-        edit_telefone = findViewById(R.id.edit_telefone);
-        edit_senha = findViewById(R.id.edit_senha);
-        progressBar = findViewById(R.id.progressBar);
-    }
 }

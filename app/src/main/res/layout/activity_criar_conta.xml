@@ -44,7 +44,7 @@
                 app:layout_constraintVertical_bias="0.425">
 
                 <EditText
-                    android:id="@+id/edit_nome"
+                    android:id="@+id/editNomeC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -57,7 +57,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/edit_email"
+                    android:id="@+id/editEmailC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -70,7 +70,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/edit_telefone"
+                    android:id="@+id/editTelefoneC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -83,7 +83,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/edit_senha"
+                    android:id="@+id/editSenhaC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -100,7 +100,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_cadastro"
+                    android:id="@+id/btnCadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -111,7 +111,7 @@
                     android:textSize="18sp" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar"
+                    android:id="@+id/progressBarC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
