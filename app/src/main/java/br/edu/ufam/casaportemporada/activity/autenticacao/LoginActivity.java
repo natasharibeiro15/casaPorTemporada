@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import br.edu.ufam.casaportemporada.R;
+import br.edu.ufam.casaportemporada.activity.FormAnuncioActivity;
 import br.edu.ufam.casaportemporada.activity.MainActivity;
 import br.edu.ufam.casaportemporada.databinding.ActivityLoginBinding;
 import br.edu.ufam.casaportemporada.helper.FirebaseHelper;
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         ).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 finish();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, FormAnuncioActivity.class));
             }else{
                 String error = task.getException().getMessage();
                 Toast.makeText(this, error, Toast.LENGTH_LONG).show();

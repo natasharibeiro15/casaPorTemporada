@@ -4,7 +4,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import br.edu.ufam.casaportemporada.helper.FirebaseHelper;
 
-public class Produto {
+public class Anuncio {
 
     private String id;
     private String titulo;
@@ -13,11 +13,21 @@ public class Produto {
     private String banheiro;
     private String garagem;
     private boolean status;
+    private String urlImagem;
 
-    public Produto(){
+    public Anuncio(){
         DatabaseReference reference = FirebaseHelper.getDatabaseReference();
         this.setId(reference.push().getKey());
     }
+
+    public void salvar(){
+        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+        .child("anuncios")
+                .child(this.getId());
+        reference.setValue(this);
+
+    }
+
 
     public String getId() {
         return id;
@@ -73,5 +83,13 @@ public class Produto {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 }
