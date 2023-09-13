@@ -5,18 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.edu.ufam.casaportemporada.R;
-import br.edu.ufam.casaportemporada.databinding.ActivityFiltrarAnunciosBinding;
 import br.edu.ufam.casaportemporada.databinding.ActivityMainBinding;
+import br.edu.ufam.casaportemporada.databinding.ActivityMeusAnunciosBinding;
 
-public class FiltrarAnunciosActivity extends AppCompatActivity {
-
-    private ActivityFiltrarAnunciosBinding binding;
-
+public class MeusAnunciosActivity extends AppCompatActivity {
+    private ActivityMeusAnunciosBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityFiltrarAnunciosBinding.inflate(getLayoutInflater());
+        binding = ActivityMeusAnunciosBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
     }
 }
